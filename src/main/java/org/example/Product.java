@@ -1,0 +1,29 @@
+package org.example;
+
+public class Product {
+    private String name;
+    private String productionDate;
+    private String manufacturer;
+    private String country;
+    private double price;
+    private boolean reservation;
+
+    public Product(String name, String productionDate, String manufacturer, String country, double price, boolean reservation) {
+        this.name = name;
+        this.productionDate = productionDate;
+        this.manufacturer = manufacturer;
+        this.country = country;
+        this.price = price;
+        this.reservation = reservation;
+    }
+
+    public void printInfo() {
+        System.out.println("Название: " + name);
+        System.out.println("Дата производства: " + productionDate);
+        System.out.println("Производитель: " + manufacturer);
+        System.out.println("Страна происхождения: " + country);
+        System.out.println("Цена: " + price);
+        System.out.println("Состояние бронирования: " + (reservation ? "Забронирован" : "Не забронирован"));
+        System.out.println("---");
+    }
+}
