@@ -24,5 +24,16 @@ public class Main {
             System.out.println("Товар " + (i + 1) + ":");
             productsArray[i].printInfo();
         }
+
+        System.out.println("\n=== Проверка класса Park ===\n");
+
+        Park park = new Park();
+
+        Park.Attraction attraction1 = park.new Attraction("Карусель", "09:00 - 21:00", 300);
+
+        System.out.println("Аттракцион 1:");
+        attraction1.printInfo();
+        System.out.println();
+
     }
 }
