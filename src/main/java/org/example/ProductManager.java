@@ -2,7 +2,6 @@ package org.example;
 
 public class ProductManager {
     public static void createAndDisplayProducts() {
-        // Создаем массив из 5 товаров
         Product[] productsArray = new Product[5];
 
         productsArray[0] = new Product("Samsung S25 Ultra", "01.02.2025",
@@ -20,7 +19,6 @@ public class ProductManager {
         productsArray[4] = new Product("iPhone 16", "11.02.2025",
                 "Apple Inc.", "USA", 77899, false);
 
-        // Выводим информацию о каждом товаре
         for (int i = 0; i < productsArray.length; i++) {
             System.out.println("Товар " + (i + 1) + ":");
             productsArray[i].printInfo();

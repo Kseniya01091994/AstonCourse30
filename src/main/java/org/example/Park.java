@@ -11,21 +11,17 @@ public class Park {
             this.workingHours = workingHours;
             this.price = price;
         }
-
         public void printInfo() {
             System.out.println("Аттракцион: " + name);
             System.out.println("Время работы: " + workingHours);
             System.out.println("Стоимость: " + price + " руб.");
         }
-
         public String getName() {
             return name;
         }
-
         public String getWorkingHours() {
             return workingHours;
         }
-
         public double getPrice() {
             return price;
         }

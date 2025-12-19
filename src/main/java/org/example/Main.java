@@ -2,7 +2,7 @@ package org.example;
 
 public class Main {
     public static void main(String[] args) {
-        // Создание и вывод массива из 5 товаров
+        // Вывод массива из 5 товаров
         ProductManager.createAndDisplayProducts();
 
         System.out.println("\n=== Проверка класса Park ===\n");
