@@ -1,5 +1,4 @@
 package org.example;
-
 public class Dog extends Animal {
     private static int dogCount = 0;
     private static final int MAX_RUN_DISTANCE = 500;
@@ -9,7 +8,6 @@ public class Dog extends Animal {
         super(name);
         dogCount++;
     }
-
     public void run(int distance) {
         if (distance <= MAX_RUN_DISTANCE) {
             System.out.println(name + " пробежал " + distance + " м.");
@@ -17,7 +15,6 @@ public class Dog extends Animal {
             System.out.println(name + " не может пробежать " + distance + " м. Максимум: " + MAX_RUN_DISTANCE + " м.");
         }
     }
-
     public void swim(int distance) {
         if (distance <= MAX_SWIM_DISTANCE) {
             System.out.println(name + " проплыл " + distance + " м.");
@@ -25,7 +22,6 @@ public class Dog extends Animal {
             System.out.println(name + " не может проплыть " + distance + " м. Максимум: " + MAX_SWIM_DISTANCE + " м.");
         }
     }
-
     public static int getDogCount() {
         return dogCount;
     }

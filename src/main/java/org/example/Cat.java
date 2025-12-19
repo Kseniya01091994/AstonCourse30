@@ -1,5 +1,4 @@
 package org.example;
-
 public class Cat extends Animal {
     private static int catCount = 0;
     private static final int MAX_RUN_DISTANCE = 200;
@@ -7,10 +6,9 @@ public class Cat extends Animal {
 
     public Cat(String name) {
         super(name);
-        this.isFull = false; // коты создаются голодными
+        this.isFull = false; // коты голодные
         catCount++;
     }
-
     public void run(int distance) {
         if (distance <= MAX_RUN_DISTANCE) {
             System.out.println(name + " пробежал " + distance + " м.");
@@ -18,7 +16,6 @@ public class Cat extends Animal {
             System.out.println(name + " не может пробежать " + distance + " м. Максимум: " + MAX_RUN_DISTANCE + " м.");
         }
     }
-
     public void swim(int distance) {
         System.out.println(name + " не умеет плавать.");
     }
@@ -31,7 +28,6 @@ public class Cat extends Animal {
             System.out.println(name + " не смог поесть. В миске недостаточно еды.");
         }
     }
-
     public boolean isFull() {
         return isFull;
     }
