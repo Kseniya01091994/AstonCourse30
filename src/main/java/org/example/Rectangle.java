@@ -17,23 +17,18 @@ public class Rectangle implements Shape {
         this.fillColor = fillColor;
         this.borderColor = borderColor;
     }
-
     public double getPerimeter() {
         return 2 * (width + height);
     }
-
     public double getArea() {
         return width * height;
     }
-
     public String getFillColor() {
         return fillColor;
     }
-
     public String getBorderColor() {
         return borderColor;
     }
-
     public String getName() {
         return "Прямоугольник";
     }

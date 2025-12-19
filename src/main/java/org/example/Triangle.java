@@ -1,49 +1,45 @@
 package org.example;
 
 public class Triangle implements Shape {
-    private double sideA;
-    private double sideB;
-    private double sideC;
+    private double base; // основание
+    private double height; // высота
+    private double side; // боковая сторона
     private String fillColor;
     private String borderColor;
 
-    public Triangle(double sideA, double sideB, double sideC, String fillColor, String borderColor) {
-        if (isValidSize(sideA, sideB, sideC) && isValidTriangle(sideA, sideB, sideC)) {
-            this.sideA = sideA;
-            this.sideB = sideB;
-            this.sideC = sideC;
+    public Triangle(double base, double height, double side, String fillColor, String borderColor) {
+        if (isValidSize(base, height, side)) {
+            this.base = base;
+            this.height = height;
+            this.side = side;
         } else {
-            this.sideA = 3.0;
-            this.sideB = 4.0;
-            this.sideC = 5.0;
+            this.base = 6.0;
+            this.height = 4.0;
+            this.side = 5.0;
         }
         this.fillColor = fillColor;
         this.borderColor = borderColor;
     }
-
-    // Проверка на валидность треугольника (сумма двух сторон больше третьей)
-    private boolean isValidTriangle(double a, double b, double c) {
-        return (a + b > c) && (a + c > b) && (b + c > a);
+    // Вычисляем вторую боковую сторону через теорему Пифагора
+    private double getSecondSide() {
+        // Вычисляем половину основания
+        double halfBase = base / 2;
+        // Вычисляем вторую боковую сторону через теорему Пифагора
+        return Math.sqrt(height * height + halfBase * halfBase);
     }
-
     public double getPerimeter() {
-        return sideA + sideB + sideC;
+        double secondSide = getSecondSide();
+        return base + side + secondSide;
     }
-
     public double getArea() {
-        // Формула Герона
-        double s = getPerimeter() / 2;
-        return Math.sqrt(s * (s - sideA) * (s - sideB) * (s - sideC));
+        return (base * height) / 2;
     }
-
     public String getFillColor() {
         return fillColor;
     }
-
     public String getBorderColor() {
         return borderColor;
     }
-
     public String getName() {
         return "Треугольник";
     }
