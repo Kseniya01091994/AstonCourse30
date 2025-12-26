@@ -1,23 +1,18 @@
-package org.example;
-
-public class ArrayGenerationAndCapture {
+public class ArrayGenerationAndCapture  {
     public static void main(String[] args) {
-        int[] numbers = new int[5];
+        int[] array = {1, 2, 3, 4, 5};
 
+        System.out.println("Длина массива: " + array.length);
         try {
-            numbers[2] = 10;
-            System.out.println("Элемент по индексу 2: " + numbers[2]);
-
-            System.out.println("Попытка доступа к элементу по индексу 5...");
-            System.out.println(numbers[5]);
-
+            // Попытка доступа к несуществующему индексу
+            System.out.println("Попытка доступа к элементу с индексом 10...");
+            int element = array[10]; // Здесь возникнет исключение
+            System.out.println("Элемент: " + element);
         } catch (ArrayIndexOutOfBoundsException e) {
-            System.err.println("Произошла ошибка: " + e.getMessage());
-            System.err.println("Вы пытаетесь обратиться к элементу, который не существует.");
-            System.err.println("Индекс должен быть от 0 до " + (numbers.length - 1));
-        } finally {
-            System.out.println("Блок finally всегда выполняется.");
+            System.out.println("Поймано исключение: " + e.getClass().getName());
+            System.out.println("Сообщение: " + e.getMessage());
+            System.out.println("Индекс " + e.getMessage() + " выходит за границы массива [0-" + (array.length-1) + "]");
         }
-        System.out.println("Программа продолжает работу после обработки исключения.");
+        System.out.println("Программа продолжает работу после обработки исключения");
     }
 }
