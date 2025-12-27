@@ -24,8 +24,8 @@ public class Main {
         System.out.println("-----------------");
 
         System.out.println("Случай отсутствия записи");
-        System.out.println("Кузнецов");
-        System.out.println(phonebook.get("Кузнецов"));
+        System.out.println("Поляков");
+        System.out.println(phonebook.get("Поляков"));
         System.out.println("-----------------");
 
         System.out.println("Пробуем записать существующий номер");
