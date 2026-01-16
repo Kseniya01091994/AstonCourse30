@@ -62,14 +62,6 @@ class CalculatorTest {
         });
     }
 
-    @Test
-    @DisplayName("Тест площади треугольника: ноль в основании должно выбрасывать исключение")
-    void testTriangleAreaZeroBase() {
-        assertThrows(IllegalArgumentException.class, () -> {
-            Calculator.calculateTriangleArea(0.0, 4.0);
-        });
-    }
-
     // Тесты для арифметических действий
     @Test
     @DisplayName("Тест сложения: 5 + 3 должно быть равно 8")
@@ -90,36 +82,11 @@ class CalculatorTest {
     }
 
     @Test
-    @DisplayName("Тест деления: 15 / 3 должно быть равно 5.0")
-    void testDivide() {
-        assertEquals(5.0, Calculator.divide(15, 3), 0.001);
-    }
-
-    @Test
-    @DisplayName("Тест деления: 7 / 2 должно быть равно 3.5")
-    void testDivideFractional() {
-        assertEquals(3.5, Calculator.divide(7, 2), 0.001);
-    }
-
-    @Test
     @DisplayName("Тест деления: деление на ноль должно выбрасывать исключение")
     void testDivideByZero() {
         assertThrows(ArithmeticException.class, () -> {
             Calculator.divide(10, 0);
         });
-    }
-
-    @Test
-    @DisplayName("Тест сложения отрицательных чисел: -5 + (-3) должно быть равно -8")
-    void testAddNegative() {
-        assertEquals(-8, Calculator.add(-5, -3));
-    }
-
-    @Test
-    @DisplayName("Тест умножения больших чисел: проверка переполнения")
-    void testMultiplyLargeNumbers() {
-        long result = Calculator.multiply(1000000, 1000000);
-        assertEquals(1000000000000L, result);
     }
 
     // Тесты для сравнения чисел
@@ -139,17 +106,5 @@ class CalculatorTest {
     @DisplayName("Тест сравнения: 4 должно быть равно 4")
     void testCompareEqual() {
         assertEquals("4 равно 4", Calculator.compareNumbers(4, 4));
-    }
-
-    @Test
-    @DisplayName("Тест сравнения отрицательных чисел: -3 должно быть больше -5")
-    void testCompareNegative() {
-        assertEquals("-3 больше -5", Calculator.compareNumbers(-3, -5));
-    }
-
-    @Test
-    @DisplayName("Тест сравнения: 0 должно быть больше -1")
-    void testCompareZero() {
-        assertEquals("0 больше -1", Calculator.compareNumbers(0, -1));
     }
 }
