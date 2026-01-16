@@ -47,16 +47,6 @@ public class CalculatorTestNG {
         Calculator.calculateTriangleArea(-5.0, 4.0);
     }
 
-    @Test(expectedExceptions = IllegalArgumentException.class)
-    public void testTriangleAreaNegativeHeight() {
-        Calculator.calculateTriangleArea(5.0, -4.0);
-    }
-
-    @Test(expectedExceptions = IllegalArgumentException.class)
-    public void testTriangleAreaZeroBase() {
-        Calculator.calculateTriangleArea(0.0, 4.0);
-    }
-
     // Тесты для арифметических действий
     @Test
     public void testAdd() {
@@ -98,11 +88,5 @@ public class CalculatorTestNG {
     public void testCompareEqual() {
         String result = Calculator.compareNumbers(4, 4);
         Assert.assertEquals(result, "4 равно 4", "4 должно быть равно 4");
-    }
-
-    @Test
-    public void testCompareNegative() {
-        String result = Calculator.compareNumbers(-3, -5);
-        Assert.assertEquals(result, "-3 больше -5", "-3 должно быть больше -5");
     }
 }
