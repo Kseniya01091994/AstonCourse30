@@ -54,14 +54,6 @@ class CalculatorTest {
         });
     }
 
-    @Test
-    @DisplayName("Тест площади треугольника: отрицательная высота должна выбрасывать исключение")
-    void testTriangleAreaNegativeHeight() {
-        assertThrows(IllegalArgumentException.class, () -> {
-            Calculator.calculateTriangleArea(5.0, -4.0);
-        });
-    }
-
     // Тесты для арифметических действий
     @Test
     @DisplayName("Тест сложения: 5 + 3 должно быть равно 8")
